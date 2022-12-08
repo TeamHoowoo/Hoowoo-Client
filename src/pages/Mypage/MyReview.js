@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Container, Row, Col, Tabs, Tab } from "react-bootstrap"
+import { Container, Row, Col, Tabs, Tab, Table } from "react-bootstrap"
 
 import MypageNav from "./main_content/MypageNav"
 import UserCard from "./main_content/UserCard"
@@ -22,6 +22,31 @@ export default function MyReview() {
             <Tabs defaultActiveKey="profile" id="fill-tab-example" className="mb-3" fill>
             <Tab eventKey="profile" title="작성가능한 상품평">
                 {/* 작성가능한 리뷰가 없을 때 -> 알림창, 작성가능한 리뷰 있을 때 출력 */}
+                <Table striped bordered hover>
+                    <thead>
+                        <tr style={{borderBottom: '1px solid black'}}>
+                        <th>상품정보</th>
+                        <th>구매/ 구매확정일</th>
+                        <th>후기작성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        </tr>
+                        <tr>
+                        <td>3</td>
+                        <td colSpan={2}>Larry the Bird</td>
+                        </tr>
+                    </tbody>
+                    </Table>
             </Tab>
             <Tab eventKey="home" title="작성한 상품평">
                 <div className=".cancel_list d-flex flex-column mt-5">
@@ -41,3 +66,17 @@ export default function MyReview() {
     )
 }
 
+function CanReview() {
+
+
+}
+
+
+// const ValidReview = styled`
+//     Table {
+
+//         thead {
+//             border-bottom: 1px solid black;
+//         }
+//     }
+// `
